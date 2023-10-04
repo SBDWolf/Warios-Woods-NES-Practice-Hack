@@ -1,7 +1,16 @@
 @include
     expand_stage_select:
-        lda !current_input_periodical
+        lda !current_input_pressed
+        ; check for B
+        and #$40
+        beq +
+        ; flip bit for board selection
+        lda !board_layout_index
+        eor #$01
+        sta !board_layout_index
         ; checking for up and down
+
++       lda !current_input_periodical
         and #$0c
         beq .exit
         and #$08

@@ -2,8 +2,6 @@
 
     expand_stage_print:
         lda $6005, x
-        cmp #$0f
-        beq +
         clc 
         adc !selected_stage_offset
         sta $6005, x
@@ -12,7 +10,7 @@
         sta $600a, x
 
         ; execute hijacked instructions
-+       txa 
+        txa 
         clc 
         adc #$0a
         rts 
