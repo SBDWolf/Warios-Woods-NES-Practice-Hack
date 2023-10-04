@@ -8,8 +8,29 @@
         lda !board_layout_index
         eor #$01
         sta !board_layout_index
-        ; checking for up and down
+        
 
+        ; check if start is held. if it is, up/down will increment the bomb counter, if not, they will increment the stage offset
++       lda !current_input_held
+        and #$10
+        beq +
+        
+        ; start is held
+        lda !current_input_periodical
+        and #$0c
+        beq .exit
+        and #$08
+        beq .handle_start_down
+        ; start/up
+        inc !bomb_counter
+        bvc .exit
+
+        .handle_start_down:
+        dec !bomb_counter
+        bvc .exit
+
+
+        ; check for up and down
 +       lda !current_input_periodical
         and #$0c
         beq .exit
