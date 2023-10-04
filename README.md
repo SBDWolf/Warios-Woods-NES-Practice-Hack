@@ -16,6 +16,7 @@ Known issues:
 - This hack probably breaks... something. The new code has been placed over something that is \*probably\* not actually free space, so \*something\* has \*probably\* been overwritten. I have no idea what that something is though :)
 
 Build instructions:
+
 The rom is to be assembled using Asar.
 I use a the make.bat file to assemble (sorry non-windows users!). Place the rom to be patched inside the source folder with the name "source.nes", then run make.bat. The output rom will be created in the /output directory.
 Asar is included in the /tools directory.
