@@ -14,6 +14,7 @@ Every change has to do with the stage select menu that can be pulled up by press
 Known issues:
 - Pressing up/down while hovering over stage 100 will glitch up its graphic. Loading the selected stage will still work fine, however.
 - This hack probably breaks... something. The new code has been placed over something that is \*probably\* not actually free space, so \*something\* has \*probably\* been overwritten. I have no idea what that something is though :)
+- It would be nice to allow pulling up the stage select menu in the middle of regular gameplay. I've discovered that simply setting $6D71 to 0x05 will immediately pull up a functional interactable menu, but because the wrong tilesets are loaded, it will look like a garbled mess.
 
 Build instructions:
 
